@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{%static "logo.jpg" %}" rel="icon">
+  <link href="/media/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/media/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/media/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/media/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/media/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/media/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/media/vendor/owl.carousel//media/owl.carousel.min.css" rel="stylesheet">
+  <link href="/media/vendor/aos/aos.css" rel="stylesheet">
+
+  <link href="/media/css/style.css" rel="stylesheet">
+
+  <style>
+#flash {
+  width: 100px;
+  height: 100px;
+  color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: 150;
+  animation-direction: alternate;
+}
+
+@keyframes example {
+  0%   {color:red;}
+  25%  {color:yellow;}
+  50%  {color:blue;}
+  75%  {color:green;}
+  100% {color:red;}
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("img_parallax.jpg");
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+</style>
+
+
+</head>
+
+ <header id="header" class="fixed-top ">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+       <a href="index.html" class="logo"><img src="{%static "logo.jpg"%}" alt="" height=120px width=90px class="img-fluid"></a>
+
+      <h1 class="logo"><a href="">LakeWay Cottages</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a class="nav-link js-scroll-trigger" href="{%url 'index'%}">Home</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{%url 'basic_app:createFeature'%}">Create Feature</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{%url 'basic_app:createApartment'%}">Create Apartment</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{%url 'basic_app:logout'%}">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{%url 'basic_app:login'%}">Login</a></li>
+            {% endif %}
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a  href="#about" class="get-started-btn scrollto" style="background:#76922b">Get Started</a>
+         <a href="https://5gemporium.com/" class="logo"><img  height=120px width=90px  src="{%static "5G Group of Companies.jpg"%}" alt=""class="img-fluid"></a>
+
+    </div>
+  </header><!-- End Header -->
+
+    {%block body_block%}
+    {%endblock%}
+
+
+  <footer id="footer">
+    <div class="footer-top " style="background:#76922b">
+      <div class="container">
+        <div class="row">
+        </div>
+        <div class="d-flex justify-content-around">
+          <a href="index.html" class="logo"><img src="{%static "logo.jpg"%}" alt="" height=120px width=130px class="img-fluid"></a>
+      <a href="https://5gemporium.com/" class="logo "><img  height=120px width=130px  src="{%static "5G Group of Companies.jpg"%}" alt=""class="img-fluid"></a>
+      <a href="https://5gemporium.com/" class="logo "><img  height=150px width=210px  src="{%static "5G Properties.jpg"%}" alt=""class="img-fluid"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>LakeWay Cottages</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+        Designed by <a href="https://datatines.pythonanywhere.com/">DATA-TINES</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="/media/vendor/jquery/jquery.min.js"></script>
+  <script src="/media/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/media/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/media/vendor/php-email-form/validate.js"></script>
+  <script src="/media/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/media/vendor/counterup/counterup.min.js"></script>
+  <script src="/media/vendor/venobox/venobox.min.js"></script>
+  <script src="/media/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/media/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/media/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/media/js/main.js"></script>
+</body>
+</html>
